@@ -1,13 +1,23 @@
 import { Button, Card, Form, Input } from 'antd'
+import { login } from '../../api/login'
+import type { LoginParams } from '../../api/types/login'
 import style from './login.module.scss'
+
 export const Login: React.FC = () => {
+  const onFinish = async (values: LoginParams) => {
+    const params: LoginParams = {
+      ...values,
+      grant_type: 'password',
+      scope: 'test',
+    }
+    await login(params)
+  }
   return (
     <main className={style.layout}>
-      <Card title='登录'>
+      <Card title='Login'>
         <Form
           name="normal_login"
-          className="login-form"
-          initialValues={{ remember: true }}
+          onFinish={onFinish}
         >
           <Form.Item
             name="username"
@@ -25,7 +35,7 @@ export const Login: React.FC = () => {
             />
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit" className="login-form-button">
+            <Button type="primary" htmlType="submit">
               Log in
             </Button>
           </Form.Item>

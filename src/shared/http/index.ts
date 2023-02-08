@@ -8,7 +8,7 @@ const transform: AxiosTransform = {
       return res
 
     const { data } = res
-    return data.data
+    return data
   },
   beforeRequestHook: (config, options) => {
     const { useToken } = options
