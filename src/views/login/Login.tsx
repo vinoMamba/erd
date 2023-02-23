@@ -1,7 +1,6 @@
 import { Button, Card, Form, Input } from 'antd'
 import { login } from '../../api/login'
 import type { LoginParams } from '../../api/types/login'
-import style from './login.module.scss'
 
 export const Login: React.FC = () => {
   const onFinish = async (values: LoginParams) => {
@@ -13,7 +12,7 @@ export const Login: React.FC = () => {
     await login(params)
   }
   return (
-    <main className={style.layout}>
+    <main className='w-full h-screen flex justify-center items-center bg-#f0f0f0'>
       <Card title='Login'>
         <Form
           name="normal_login"

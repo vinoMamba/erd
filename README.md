@@ -7,6 +7,7 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Ant Design 5.0](https://ant.design/index-cn)
 - [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
+- [unocss](https://github.com/unocss/unocss) [unocss互动使用文档](https://uno.antfu.me/)。
 
 ## 开发约定
 
@@ -15,6 +16,7 @@
 3. Function 组件必须使用 `React.FC` 类型。不推荐使用 Class 组件
 4. 接口请求封装再 `src/api` 目录下，使用 `axios` 库。
 5. 全局状态管理使用 `zustand` 库。 `src/stote` 目录下。
+6. Unocss First! 系统 css 方案这里推荐使用`unocss`。同时也提供了‘sass`的支持。(vscode 推荐下载unocss插件，提升开发体验)
 
 ## 目录结构
 
