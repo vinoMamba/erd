@@ -1,6 +1,6 @@
 import { Button, Card, Form, Input } from 'antd'
-import { login } from '../../api/login'
 import type { LoginParams } from '../../api/types/login'
+import { useLogin } from '../../hooks/useLogin'
 
 export const Login: React.FC = () => {
   const onFinish = async (values: LoginParams) => {
@@ -9,7 +9,7 @@ export const Login: React.FC = () => {
       grant_type: 'password',
       scope: 'test',
     }
-    await login(params)
+    const { userInfo } = useLogin(params)
   }
   return (
     <main className='w-full h-screen flex justify-center items-center bg-#f0f0f0'>
